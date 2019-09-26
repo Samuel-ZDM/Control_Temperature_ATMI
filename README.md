@@ -26,13 +26,13 @@ The temperature sensor is the LM35 with output ranging from 10mV / °C.
 The MCU for simulation was the Atmega328p. This microcontroller was responsible for the control tasks and the system interface.
 The schematic of the MCU is shown in next figure.
 
-<img src = "Images/mcu.png" width = "300" heigth="300">
+<img src = "Images/mcu.png" width = "500" heigth="300">
 
 # Drive
 
 The driver used was the L923D Integrated Circuit - Half-H Quadruple Drivers, pinout shown below,
 
-<img src = "Images/drive.png" width = "400" heigth="300">
+<img src = "Images/drive.png" width = "500" heigth="300">
 
 # Heater
 
