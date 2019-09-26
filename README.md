@@ -8,7 +8,7 @@ Design a temperature control system capable of warming and cooling the environme
 # System Block Diagram
 The block diagram of the system is shown in figure 1.
 
-<img src = "diagramablocos.png" width = "600" heigth="500">
+<img src = "Images/diagramablocos.png" width = "600" heigth="500">
 
 ## Interface
 
@@ -19,20 +19,20 @@ The system will have a four button interface and a 16x2 LCD display where you ca
 
 The temperature sensor is the LM35 with output ranging from 10mV / °C.
 
-<img src = "sensor.png" width = "300" heigth="300">
+<img src = "Images/sensor.png" width = "300" heigth="300">
 
 # MCU
 
 The MCU for simulation was the Atmega328p. This microcontroller was responsible for the control tasks and the system interface.
 The schematic of the MCU is shown in next figure.
 
-<img src = "mcu.png" width = "300" heigth="300">
+<img src = "Images/mcu.png" width = "300" heigth="300">
 
 # Drive
 
 The driver used was the L923D Integrated Circuit - Half-H Quadruple Drivers, pinout shown below,
 
-<img src = "drive.png" width = "400" heigth="300">
+<img src = "Images/drive.png" width = "400" heigth="300">
 
 # Heater
 
@@ -52,7 +52,7 @@ An LED should be used to inform that the system is running. The LED should remai
 
 The controller used will be of Proportional type, in this controller the error signal, difference between the reference signal and the feedback signal, is multiplied by the proportional gain (Kp) and applied to the output.
 
-<img src = "controller.png" width = "400" heigth="300">
+<img src = "Images/controller.png" width = "400" heigth="300">
 
 
 ##![img](https://user-images.githubusercontent.com/26744649/64809604-11036780-d570-11e9-8f74-8a23f382f7e4.png )
