@@ -55,8 +55,9 @@ The controller used will be of Proportional type, in this controller the error s
 <img src = "Images/controller.png" width = "400" heigth="300">
 
 The block diagram of the controller is shown below:
+
+
 <img src = "Images/controlblock.png" width = "400" heigth="300">
 
-##![img](https://user-images.githubusercontent.com/26744649/64809604-11036780-d570-11e9-8f74-8a23f382f7e4.png )
 
-##C:\Users\samue\Google Drive\Engenharia de Computação\10º semestre\Automação I\Control_Temperature
+
