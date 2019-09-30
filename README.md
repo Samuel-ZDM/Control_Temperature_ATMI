@@ -59,5 +59,9 @@ The block diagram of the controller is shown below:
 
 <img src = "Images/controlblock.png" width = "400" heigth="300">
 
+# Schematic 
+
+The next figure shows the schematic of the circuit assembly.
+
 
 
