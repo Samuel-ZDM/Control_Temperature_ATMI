@@ -63,5 +63,5 @@ The block diagram of the controller is shown below:
 
 The next figure shows the schematic of the circuit assembly.
 
-<img src = "Images/shc.png" width = "500" heigth="400">
+<img src = "Images/sch.png" width = "500" heigth="400">
 
