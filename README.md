@@ -61,7 +61,12 @@ The block diagram of the controller is shown below:
 
 # Schematic 
 
-The next figure shows the schematic of the circuit assembly.
+The next figure shows the schematic of the circuit mounting.
 
 <img src = "Images/sch.png" width = "500" heigth="400">
 
+# Practical mounting
+
+In the next images, shows the practical mounting. 
+
+<img src = "Images/foto1.jpg" width = "500" heigth="400">
