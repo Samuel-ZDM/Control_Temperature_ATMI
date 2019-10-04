@@ -61,7 +61,23 @@ void setup()
 void loop()
 {
 
+	/*
+	 * Settings:
+	 *
+	 *
+	 * 			Is possible to configure the gain, increment and frequency in defines.h file.
+	 * 			The buttons are:
+	 * 						  P: The P button changes to the next screen
+	 * 						  M: Up the values and On in the configurations
+	 * 						  L: Down the value and OFF in the configurations
+	 * 						  S: In the MANUAL_HEAT and MANUAL_FAN choose the state.
+	 * 						  	 In the others screens, go back to the First screen.
+	 *
+	 */
 
+	/*
+	 * Read sensor LM35 and do calculations
+	 */
 	readSensor(PIN_LM,&sensorRead);
 
 	/*
@@ -93,58 +109,14 @@ void loop()
 	}
 
 
-	//			if(set_point > sensorRead)
-	//			{
-	//				if(man)
-	//				{
-	//
-	//					analogWrite(PIN_HEAT,percPwm(valueHeat));
-	//
-	//				}else{
-	//
-	//					digitalWrite(PIN_ENB1, 1);
-	//					valueHeat = percHeat( pwmHeat(gain,set_point,sensorRead));
-	//					analogWrite(PIN_HEAT, pwmHeat(gain,set_point,sensorRead));
-	//				}
-	//
-	//			}else{
-	//				if(!man)
-	//					digitalWrite(PIN_ENB1, 0);
-	//				else
-	//
-	//					analogWrite(PIN_HEAT,percPwm(valueHeat));
-	//
-	//			}
-
-				//			if(set_point < sensorRead )
-				//			{
-				//
-				//				if(manFan)
-				//				{
-				//
-				//					analogWrite(PIN_FAN,percPwm(valueFan));
-				//				}else{
-				//					digitalWrite(PIN_ENB2, 1);
-				//					valueFan = percFan( pwmFan(gain,set_point,sensorRead));
-				//					analogWrite(PIN_FAN, pwmFan(gain,set_point,sensorRead));
-				//
-				//				}
-				//
-				//
-				//
-				//			}else{
-				//				if(!manFan)
-				//					digitalWrite(PIN_ENB2, 0);
-				//				else
-				//
-				//					analogWrite(PIN_FAN,percPwm(valueFan));
-				//			}
-
-
 
 
 	switch(screen)
 	{
+
+	/*
+	 * case SCREEN_FIRST, show the first screen. Show the initial settings
+	 */
 		case SCREEN_FIRST:
 		{
 			tempo_atual = millis();
@@ -170,6 +142,10 @@ void loop()
 		}
 
 
+		/*
+		 * case SCREEN_SECOND:, show the second screen. Show the set point value.
+		 * Is possible change the set point value.
+		 */
 		case SCREEN_SECOND:
 		{
 			tempo_atual = millis();
@@ -235,6 +211,11 @@ void loop()
 			break;
 		}
 
+		/*
+		 * case SCREEN_THIRD:, show the third screen. Show the gain value.
+		 * Is possible change the gain value.
+		 */
+
 		case SCREEN_THIRD:
 		{
 //
@@ -294,6 +275,15 @@ void loop()
 		 break;
 		}
 
+		/*
+		 * case MANUAL_HEAT:,  Show if the manual mode is ON.
+		 * Is possible change the manual heat state.
+		 * Button M: On Manual mode Heat
+		 * Button L: OFF Manual mode Heat
+		 * OBS: After choose the state, ON or OFF, click the button S
+		 * If button P the next screen will be the MANUAL_FAN
+		 *
+		 */
 		case MANUAL_HEAT:
 		{
 			tempo_atual = millis();
@@ -347,6 +337,12 @@ void loop()
 
 			break;
 		}
+		/*
+		 * case SCREEN_FOURTH:,  Show if the heat mode is ON or OFF.
+		 * Is possible change the heat state.
+		 * Button M: On heat
+		 * Button L: OFF heat
+		 */
 
 		case SCREEN_FOURTH:
 		{
@@ -413,7 +409,12 @@ void loop()
 				break;
 		}
 
-
+		/*
+		 * case SCREEN_FOURTH: Show the heat PWM value.
+		 * Is possible change the PWM heat state.
+		 * Button M: Up the PWM value
+		 * Button L: Down the PWM value
+		 */
 		case SCREEN_FIFTH:
 		{
 
@@ -488,6 +489,15 @@ void loop()
 
 		}
 
+		/*
+		 * case MANUAL_FAN:,  Show if the fan manual mode is ON.
+		 * Is possible change the manual heat state.
+		 * Button M: On Manual mode Fan
+		 * Button L: OFF Manual mode Fan
+		 * OBS: After choose the state, ON or OFF, click the button S
+		 * If button P the next screen will be the eighth screen
+		 *
+		 */
 		case MANUAL_FAN:
 		{
 
@@ -547,6 +557,12 @@ void loop()
 			break;
 		}
 
+		/*
+		 * case SCREEN_SIXTH:,  Show if the fan mode is ON or OFF.
+		 * Is possible change the heat state.
+		 * Button M: On fan
+		 * Button L: OFF fan
+		 */
 		case SCREEN_SIXTH:
 		{
 
@@ -612,6 +628,13 @@ void loop()
 
 
 		}
+
+		/*
+		 * case SCREEN_SEVENTH: Show the fan PWM value.
+		 * Is possible change the PWM fan state.
+		 * Button M: Up the PWM value
+		 * Button L: Down the PWM value
+		 */
 
 		case SCREEN_SEVENTH:
 		{
@@ -684,6 +707,13 @@ void loop()
 			break;
 		}
 
+		/*
+		 * case SCREEN_EIGHTH: Show the driver state.
+		 * Is possible change drive state
+		 * Button M: On driver
+		 * Button L: OFF driver
+		 */
+
 		case SCREEN_EIGHTH:
 		{
 
@@ -722,12 +752,12 @@ void loop()
 
 
 
-					if(getScreen())
-					{
-						screen = SCREEN_FIRST;
-						clearLCD();
-						pushScreen (0);
-					}
+				if(getScreen())
+				{
+					screen = SCREEN_FIRST;
+					clearLCD();
+					pushScreen (0);
+				}
 
 			break;
 		}

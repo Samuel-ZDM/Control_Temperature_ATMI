@@ -72,7 +72,7 @@ void readSensor(int pin, float *p)
 	for (int i = 0; i < 50; i++)
 	{
 		*p += (analogRead(pin) * 5.0/1023)/0.01;
-		delay(5);
+		delay(1);
 	}
 
 	*p = *p /50;
